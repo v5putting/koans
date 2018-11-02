@@ -9,15 +9,36 @@
 #     puts ex
 #   end
 # end
-
-# def test (a = 1,b = 2)
-#   puts a.object_id
 #
-#   puts b.object_id
+# class Food
+#   def expensive a
+#     if a > 1
+#       yield
+#     else
+#       yield + 66666.to_s
+#     end
+#   end
 # end
-# test
-def test2(a = :a, b = :a)
-  puts a.object_id
-  puts b.object_id
+#
+# class Bread < Food
+# end
+# a = Bread.new
+# puts a.expensive(5){("b"+"a")}
+
+class Person
+  def set_age=(value)
+    @a = value
+  end
+  #
+  def get_age
+    @a
+  end
 end
-test2
+
+a = Person.new
+# b = Person.new
+
+a.set_age(5)
+# b.age = 6
+
+a.get_age
